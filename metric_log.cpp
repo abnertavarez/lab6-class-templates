@@ -14,12 +14,22 @@ using namespace std;
  *
  * Data:
  * [Complete in Part E: describe the values managed by this log.]
- *
+ *  Stores a capacity of four values of a generic type.
+ * 
  * Operations:
  * [Complete in Part E: describe add(value).]
+ * adds a new value to the log when there is remaining capacity.
+ * 
  * [Complete in Part E: describe get(index) and its precondition.]
+ * it returns the value stored at the given index.
+ * 
  * [Complete in Part E: describe contains(target).]
+ * returns true when an equal stored value exists; otherwise returns false.
+ * 
  * [Complete in Part E: describe size() and isEmpty().]
+ * size returns the number of values currently stored in the log.
+ * isEmpty returns true when the log stores no values; otherwise returns false.
+ * 
  */
 
 template <typename T>
@@ -78,7 +88,6 @@ public:
 };
 
 // ===== Do not resolve these TODOs yet (Part D) =====
-
 // TODO (Part D): Define MetricLog<T>::contains outside the class.
 // It receives a generic target by const reference.
 // Return true when an equal stored value exists; otherwise return false.
@@ -109,9 +118,17 @@ int main()
     // ===== Do not resolve these TODOs yet (Part E) =====
 
     // TODO (Part E): Create a MetricLog<double> for session durations.
+    MetricLog<double> sessionDurations;
     // TODO (Part E): Add two dummy duration values to that log.
+    sessionDurations.add(10.5);
+    sessionDurations.add(15.2);
     // TODO (Part E): Use contains with one value that exists and one that does not exist.
+    cout << "Contains 10.5: "
+         << sessionDurations.contains(10.5) << endl;
+    cout << "Contains 20.0: "
+         << sessionDurations.contains(20.0) << endl;
     // TODO (Part E): Print descriptive English labels for all results.
+
 
     return 0;
 }
